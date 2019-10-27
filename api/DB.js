@@ -1,5 +1,5 @@
 // DB.js
 
 module.exports = {
-    DB: 'mongodb://localhost:27017/mevncrud'
+    DB: 'mongodb://10.0.3.108:27017/mevncrud'
 }
