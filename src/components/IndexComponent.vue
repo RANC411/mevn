@@ -31,6 +31,7 @@
 </template>
 
 <script>
+  import {globalStore} from '../main.js'
   export default {
       data() {
         return {
@@ -38,7 +39,7 @@
         }
       },
       created() {
-      let uri = 'http://localhost:4000/posts';
+      let uri = `http://${globalStore.targetIP}/posts`;
       this.axios.get(uri).then(response => {
         this.posts = response.data;
       });
@@ -46,7 +47,7 @@
     methods: {
       deletePost(id)
       {
-        let uri = `http://localhost:4000/posts/delete/${id}`;
+        let uri = `http://${globalStore.targetIP}/posts/delete/${id}`;
         this.axios.delete(uri).then(id => {
           this.posts.splice(this.posts.indexOf(id), 1);
         });

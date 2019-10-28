@@ -19,6 +19,12 @@ import CreateComponent from './components/CreateComponent.vue';
 import IndexComponent from './components/IndexComponent.vue';
 import EditComponent from './components/EditComponent.vue';
 
+export const globalStore = new Vue({
+    data: {
+      targetIP: 'localhost:3000'
+    }
+  })
+
 const routes = [
   {
       name: 'home',

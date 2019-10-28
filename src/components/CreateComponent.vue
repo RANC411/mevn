@@ -28,6 +28,7 @@
 </template>
 
 <script>
+    import {globalStore} from '../main.js'
     export default {
         data(){
         return {
@@ -36,7 +37,7 @@
     },
     methods: {
       addPost(){
-        let uri = 'http://localhost:4000/posts/add';
+        let uri = `http://${globalStore.targetIP}/posts/add`;
         this.axios.post(uri, this.post).then(() => {
         this.$router.push({name: 'posts'});
         });
